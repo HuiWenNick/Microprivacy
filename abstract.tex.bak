@@ -1,0 +1,13 @@
+\begin{abstract}
+
+In this paper, we address the `micro-privacy in macro-place' issue, a privacy violation phenomenon easily noticed by others but unnoticed by a phone user.  In other words, when a user is using his phone, another person close to him tries to read from his phone screen.  We refer to this person as `a visual eavesdropper.'  Our idea is to use the front camera of a smartphone as the eye on the back to preserve phone screen privacy  in the public place.  We present {\it MicroPrivacy}, the first system that integrates image and video processing techniques on smartphones to effectively detect visual eavesdropping.  MicroPrivacy deals with the limited camera view issue and the constrained computation power of smartphones.
+%We divide the privacy area into two parts: area inside the front camera view and area outside of the front camera view. Within the camera view area, we adopt vision and image processing algorithms to detect visual eavesdroppers; outside the area, we predict the location of the eavesdropper based on his previous direction and speed.
+We validate the effectiveness of MicroPrivacy using public datasets and also data we collected from real world over three-month period.
+Experimental results show that MicroPrivacy  achieves precision and recall in detection of visual eavesdroppers.
+%MicroPrivacy performance is acceptable and practical for preserving people micro-privacy on smartphone screen.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Smartphone privacy; Mobile applications; Face detection
+\end{IEEEkeywords}
+

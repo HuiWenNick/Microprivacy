@@ -1,0 +1,27 @@
+\section{Design Considerations}
+
+In this section, we discuss the technical considerations that underpin the design of our approach while the detailed design is presented in Section~\ref{sec:details}.
+
+%the following sentences do not convey much new info, hence I'm deleting them.
+%Assuming that the privacy text information in our phone screen is the visual privacy. The person who is peeping at your phone information is definitely a visual privacy stealer that try to get your privacy from vision and pretend to be unconscious.  According to our experience, the visual privacy stealer always stay around you and try to watch your text information for stealing your information. We can use these prior knowledge to detect the visual privacy stealer for protecting privacy.
+
+\subsection{Definition of Privacy-Impraied Area}
+Detection of visual eavesdropping on smartphones essentially relies on the real-time processing of the front camera video streams. A proper pre-processing techniques can reduce computation cost and helps estimate the probability of potential privacy leakage.  Therefore, we propose a  preprocessing strategy that takes into account the following issues.
+
+\textbf{Limited Camera Field of View.}
+Ideally detecting visual eavesdropping requires a wide camera angle.  However, the front camera on modern smartphones usually has a rather limited field of view.  Therefore, a visual eavesdropper may  fall outside of the camera monitoring area, rendering traditional detection method helpless.  Requesting users to add an additional device such as  fisheye lens to extend the field of view is impractical since it reduces user mobility and incurs additional cost.  Currently there is no good solution to the limited field of view problem   yet unless  mobile phone manufacturers expand the angle of the camera.  To address this issue, we provide a proper definition of the privacy impaired area.  With the knowledge of the privacy impaired area and camera monitoring area, we can predict the probability of the privacy leakage outside the camera view by using the historical human detection results. Besides, a proper definition of the privacy impaired area  can also be used to determine the detection range and degree of protection, thereby saving the computation cost of the privacy leakage detection.
+%Although the angle of the mobile phone camera would become large while the demands of the
+
+\textbf{Blocked Camera Field of View.}
+  Considering that a smartphone user always stays in front of the front camera, we can identify a center area  blocked by the user's face and body most of the time. Detection of a visual eavesdropper in this blocked area is unnecessary. Generally, the user's face  is the largest object in the image. We detect the face in a full image and record the blocked area every few seconds.  When the visual eavesdropping detection method tries to detect a human, it  skips the blocked area. Further, the blocked camera monitoring area limits the field of view again and significantly affects the performance of the visual eavesdropping detection method.  Therefore, the definition of the privacy impaired area needs to consider the user blocked area to help better predict the privacy leakage probability.
+
+
+
+\subsection{Detection of Human}
+Human detection is an important part of visual eavesdropping detection. It tries to detect the human and record its motion trajectory in order to  determine whether the person is a visual eavesdropper or not.  An intuitive solution for  human detection is to detect the face and eyes. Advances in face detection and increasing availability of face detection SDKs and source codes make it practical to explore camera-based mobile apps. However, the accuracy of the face detection method decreases as the background scene gets more complicated.  A face detection method typically only uses a single static image and ignores the rich video information. Comparing to the exact matching required by a face detection method, motion detection only needs rough matching by using video to track the object.  This not only helps detect the human without  face detection, but also makes full use of the video information. We hence combine the face detection method and motion detection method for improving the robustness of the human detection.
+
+%\textbf{Human Detection in Different Environments.}
+%Human detection needs to be able to detect human in different environments.  Building a probability model to predict the location of the human who moves outside the monitoring area has to take into account various factors of the environment such as noise level, background mobility, crowd level.  Therefore, we fuse multiple sensors data to help us better characterize the environments.
+
+
+

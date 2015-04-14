@@ -1,0 +1,142 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+
+
+\documentclass[10pt, conference, letterpaper]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage[bookmarks=false]{hyperref}
+\usepackage{cite}
+\usepackage[dvips]{graphicx}
+\usepackage[cmex10]{amsmath}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{verbatim}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+\usepackage{eqparbox}
+\usepackage{fixltx2e}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{booktabs}
+\hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{color}
+%\usepackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+
+\begin{document}
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{MicroPrivacy: \\Detection of Visual Eavesdroppers on Smartphones}
+%Detection of Visual Eavesdroppers to Preserve Privacy on Smartphones }
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+
+%\author{
+%\IEEEauthorblockN{Hui Wen$^{1,2}$, Qiang Li$^{1,2}$, Qi Han$^{3}$, Shiming Ge$^{1}$,Limin Sun$^{1}$\thanks{\small{Limin Sun is the corresponding author.}}
+%}
+%\IEEEauthorblockA{
+%$^1$Institute of Information Engineering,CAS,Beijing, Beijing, China 100093
+%\\$^2$University of Chinese Academy of Sciences, Beijing, China 100093
+%\\$^3$Department of EECS, Colorado School of Mines, Golden, CO USA 80401
+%\\ Email:\{{wenhui,liqiang43,geshiming,sunlimin\}}@iie.ac.cn, qhan@mines.edu
+%}
+%
+%}
+
+\author{}
+
+
+% make the title area
+\maketitle
+
+
+%\begin{abstract}
+%%\boldmath
+%Visual eavesdropping refers to a scenario that a person tries to read the content displayed on another person's mobile phone screen over the shoulder of that person while trying to be unobtrusive.
+%We present an interesting approach that detects visual eavesdroppers in order to preserve privacy on mobile phones. The proposed detection method relies on computer vision and image processing algorithms running on the video streams from the front camera  built in most commodity mobile phones.
+%Considering the limitations of a mobile phone's computation power and camera's field of view, we propose effective pre-processing techniques to reduce computation needs.  We further combine face detection and motion detection methods to improve the accuracy for detecting  visual eavesdroppers in different scenes. For situations in which a visual eavesdropper moves into an area not detectable by the front camera, we design a maximum likelihood estimation method to predict the probability of potential visual eavesdropping.
+%We present the design and implementation of visual eavesdroppers detection method.  We evaluate the proposed method using a series of experiments.  Our empirical studies show that the proposed technique achieves high detection accuracy.
+%\end{abstract}
+
+\input{abstract}
+
+\IEEEpeerreviewmaketitle
+
+
+\input{intro.tex}
+
+\input{relate}
+
+\input{design_Consideration.tex}
+
+\input{System_Detailed_Design.tex}
+
+\input{Experiments.tex}
+
+
+
+
+
+\section{Conclusion}
+In this paper, we define the problem of  visual  eavesdropping  and propose a method to detect it {\color{red} for preserving} user privacy on smarthphone. We conduct a variety of  experiments to evaluate the effectiveness of the proposed method {\color{red} on} public datasets and real-world experiments.  This work can help alert people of potential eavesdropping. Our future work will complement this work by protecting user privacy via image distortion and masking when potential privacy leakage is detected.
+
+{\color{red} According to the current situation, MicroPrivacy can not handle the complex situation such as multiple people walking around the smartphone user or the complex background with serious light variation, but it still can alert the privacy leakage probability in this situation, even it is not high precision. Becomes of the present CV method can not have a satisfactory performance, many intelligent apps on smartphone are not efficient for handling many situation in real life. MicroPrivacy also have the same drawbacks. Despite the weaknesses of the CV(computer vision) based method, MicroPrivacy can work well in many scenarios. Especially in the broad place or the room with few people, MicroPrivacy have a significant result in detection of visual eavesdropper.  It shows that CV based method have a great potential in the future while CV technology become more robust and efficient. High energy consumption is another problem in CV based apps on smartphone. To address this problem, a few researches have already focus on this topic for reducing the computation\cite{mobilevision}. Besides, with the development of the smartphone hardware, the computation of the CV based application can be accepted on smartphone.}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,mobile}
+
+
+
+
+% that's all folks
+\end{document}
+
+

@@ -1,0 +1,68 @@
+
+\section{Introduction}
+% no \IEEEPARstart
+
+% the importance of the privacy
+% privacy protection method
+% background
+% intuitive method
+% details
+
+%importance of visual privacy
+As the usage of smartphone becomes part of our daily lives and our public surroundings are increasing, people are more eager than ever to create their own personal space using the small and micro-private smartphone screen.  However, light-emitting phone screens are naturally attention grabbing, easily seen by  people around, so they can easily become the target of privacy violation.
+For instance,  on a subway train,  Alice is reading an instant message from her intimate friend, people behind her maybe eavesdrop the screen leading to leakage of the private information. Alice might feel uncomfortable about it whether eavesdropper is innocuous or hostile.
+
+
+In this paper, we focus on this micro-privacy issue with  smartphone screen in a public space, e.g., subway station, train, bus, office, cafe,  classroom, or plaza.  {\color{red}It is a visual privacy issue in urgent need of  a protection  or warning strategy to help a phone user to avoid being visually eavesdropped.  }
+Fig.~\ref{fig:motivation} (left) shows an example that Alice is texting her friend and Bob is eavesdropping her screen content. Fig.~\ref{fig:motivation} (right) shows in a classroom a person is using his smartphone.  He is so focused that he does not  another person is reading his screen from the back.
+A visual eavesdropper is a person who is out of sight of the phone user but tries to read the content displayed on a  mobile phone screen.  This screen micro-privacy issue is different from existing privacy protection of smartphones, such as privacy leakage by third party apps~\cite{tapprints2012}, malicious attack~\cite{riskranker2012} or advertisement fraud~\cite{madfraud2014}.  {\color{red}Although the hand-shielding gesture can be used for restricting the vision channel to protect this micro-privacy\cite{yan2013designing}, the phone users can not keep this special behavior all the time when the users focus on instant text chatting or interesting messages.}
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=3.5in]{first.eps}
+\caption{An example of visual eavesdropping}
+\label{fig:motivation}
+\end{figure}
+
+If visual eavesdropping is visible by the phone user, one can decide how to preserve one's privacy;
+however,If visual eavesdropping is out of sight of the phone user, e.g., staying behind, one needs an eye at the back to spot this. You wish
+you had \emph{another eye on your back}!
+Since most modern commodity smartphones  have embedded a front camera, we propose to use the front camera of smartphones to serve as the eye at the back for detection of visual eavesdropping.
+
+
+While the idea of using the front camera to detect visual eavesdropping seems straightforward, many interesting challenges arise in practice.
+First,  the camera field of view is limited.
+Evidently, the necessary prerequisite of detection is that a visual eavesdropper should be captured by the front camera. However, due to the limited camera view, a visual eavesdropper might fall outside of the camera view but still can read the phone screen.
+Second,  the phone user's face always blocks the camera view.  This blocking essentially exacerbates the limited camera view  problem.
+Last, a fast real-time visual detection algorithm typically requires lots of computation resources that a smartphone may not afford to, so it is hard to achieve both high detection accuracy and speed in visual detection.
+
+ % our approaches
+In this paper, we  these challenges as follows. % detection of visual eavesdroppers on smartphones.
+To address the problem of limited field view of front camera, we divide the privacy area into two parts: the area inside the camera view and the area outside of the camera view. For the area inside, we propose a visual detection algorithm to identify visual eavesdroppers; for the area outside, we pre-estimate the movement speed and direction of the visual eavesdropper while he is inside the area, and then predict the probability of the area that  visual eavesdroppers may appear.
+To address the problem of  the phone user blocking camera, we replace the area blocked with a consistent background. We calculate the size of the blocked area to predict the probability of the visual eavesdropper may appear in this area.
+To address the limited computation capabilities of smartphones, we include a strategy that removes the blocked area before visual detection.
+
+%We address these challenges using several strategies. Firstly, we determine the size of the privacy impaired area where a visual eavesdropper may potentially exist.  {\color{red} modify! There is a tradeoff in the size of the privacy impaired area. } If  it is too small, we will miss some areas with potential eavesdropping; if it is too large, the computation cost is too high to afford.  Therefore,  defining a proper privacy impaired area not only improves detection accuracy and speed, but also reduces unnecessary energy consumption on phones. {\color{red} delete! Secondly, when we use the images captured by the front camera to detect visual eavesdroppers, we  remove the area blocked by user's face. }  This can reduce computation cost. Thirdly, we propose a robust detection method that considers different situations such as when a visual eavesdropper is outside the camera's view or when the background is complex. {\color{red} need to use a different word than complex. }
+%Finally, we take into account dynamics in environments to fine tune our approach to be adaptive.  For instance,  how long a person watches your phone is considered visual eavesdropping has a lot to do with environmental factors.
+
+%In this paper, we propose an visual eavesdroppers detection method for protecting the visual privacy. In stead of developing new human detection algorithms, we integrate the face detection and body detection to improve the robustness of the visual human detection. We further proposed an invisible human prediction model to calculate the probability of the person who is peeping at your phone in the area that falls out of the camera monitoring area.
+
+%We validate the effectiveness of  MicroPrivacy using public datasets and also the data we collected from real world over three months.
+
+
+In brief, we have made the following contributions in this work.
+\begin{itemize}
+\item We present a visual privacy issue on the smartphone screen that easily leaks out private information.  {\color{blue} We are the first to propose this concept of visual eavesdropping on smartphones.}
+\item We propose a new method to use the front camera of a smartphone to act as a human eye at the back.
+\item We implement MicroPrivacy, the first {\color{red}computer vision based system} to detect visual eavesdroppers under the constraints of limited camera view and computational power of smartphones.
+\item We evaluate MicroPrivacy  using both public datasets. Experimental results show that MicroPrivacy  achieves high precision and recall in detecting visual eavesdroppers. It also requires 20\% less computational power while still guaranteeing the same detection accuracy.
+\item We conduct real world experiments and results show that MicroPrivacy is practical for preserving people micro-privacy on smartphone screen.
+\end{itemize}
+
+The rest of the paper is structured as follows.
+{\color{red}We present  related work about privacy in Section II and show the difference between them and our approach.}
+We describe the system design considerations of MicroPrivacy  in  Section III.
+We then present details of MicroPrivacy, including three parts: privacy definition, visible human detection and invisible human detection in Section IV.
+In Section V,  we report our  experimental results.
+{\color{red}Finally, we make final remarks and show the disadvantage of the proposed method in Sections VI. }
+
+

@@ -1,0 +1,23 @@
+\section{Related Work}
+
+
+Privacy is recognized as a dominant concerning factor for a mobile device, in particular for smartphones.
+Several pieces of work have studied how to protect user privacy by detecting  behaviors   accessing sensitive data.
+TapPrints~\cite{tapprints2012} uses motion sensors (i.e, accelerometer and gyroscope) to infer the location of taps on the touch screens and detect smartphone-sensitive data such as password.
+TaintDroid~\cite{taintdroid2014} provides an Android's virtualized execution environment to analyze and determine whether third-party applications leak out user  privacy data or not.
+Similarly,  PiOS~\cite{pios2011} conducts a static analysis over iOS application intermediate code to discover any possible leaks of sensitive information by third parties. EnCore~\cite{encore2014} introduces a privacy preserving approach for mobile social applications, where people encounter strangers within a wide range of communication.
+In contrast, our work focuses on a totally different privacy on smartphones, micro-privacy on screen.
+A light-emitting phone screen maybe leak  out phone user's privacy information in the public area.
+
+To protect user privacy, it is important to distinguish from a malicious behavior.
+RiskRanker~\cite{riskranker2012} identifies and assesses potential security risks from  untrusted apps to defend against malware.
+MAdFraud~\cite{madfraud2014} studies advertisement fraud issues that is displayed on app's GUI and is embedded with Ad libraries from  the ad provider on mobile phones.
+Differently, our work proposes to preserve user privacy via issuing an alert/alarm to users, where the front camera acts as an eye on the back.
+The front camera identifies the scene that a phone user's private information might be leaking out.
+
+
+Similar to our work, several smartphone applications also adopt the front camera for different purposes. 
+Carsafe~\cite{carsafe2013} protects a  driver safety by alerting drivers to dangerous driving conditions and behavior. It uses  the front camera to monitor the driver  status and the rear camera to detect road conditions.
+Our work also uses the front camera, but we use it to detect visual eavesdroppers to protect user privacy.
+ViRi~\cite{viri2013} restores the front-view effect at the  slanted viewing angle to help users  see smartphone screen content conveniently. It uses the front camera  to  determine whether the screen is needed to slant a certain angle and adds  a commercial off-the-shelf fisheye lens to address  the limited field view of the front camera.
+Our work comes from a different perspective. it is common that people  carry and use their phones when they are in public areas. It is impractical and inconvenient to require a user to pre-setup a fisheye lens  on the front camera to detect visual eavesdroppers. Therefore, our approach does not depend on the addition of an extra hardware. 
